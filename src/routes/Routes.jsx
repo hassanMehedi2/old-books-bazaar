@@ -18,7 +18,6 @@ const routes =  createBrowserRouter ([
             {
                 index:true,
                 element: <Home></Home>,
-                loader: ()=>fetch('http://localhost:5000/api/v1/sell-posts')
             },
             {
                 path:'/login',
@@ -41,7 +40,7 @@ const routes =  createBrowserRouter ([
             {
                 path:'/my_posts/:email',
                 element: <MyPost></MyPost>,
-                loader: ({params})=>fetch(`http://localhost:5000/api/v1/sell-posts?email=${params.email}`)
+                loader: ({params})=>fetch(`http://localhost:5000/api/v1/sell_posts?email=${params.email}`)
             },
             {
                 path:'/my_bids/:email',

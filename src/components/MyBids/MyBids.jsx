@@ -3,7 +3,7 @@ import BidCard from "./BidCard/BidCard";
 
 const MyBids = () => {
     const bids = useLoaderData(null);
-
+console.log(bids);
     return (
         <div className="w-2/3 mx-auto p-10">
             <h2 className="mb-5 text-center font-bold text-xl ">your bids</h2>
