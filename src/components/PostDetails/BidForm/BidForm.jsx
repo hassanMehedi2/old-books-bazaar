@@ -38,7 +38,7 @@ const BidForm = ({ post }) => {
     }
     return (
         <div>
-            <form onSubmit={handleAddBid} className="  p-5 w-1/2 mx-auto bg-slate-100">
+            <form onSubmit={handleAddBid} className="  p-5 w-2/5 mx-auto bg-slate-100">
                 <div>
                     <h2 className="text-center my-10 font-semibold text-xl">Place your bid</h2>
                 </div>
@@ -47,7 +47,7 @@ const BidForm = ({ post }) => {
                     <label className="label">
                         <span className="label-text">Bidding Amount</span>
                     </label>
-                    <input type="number" name="biddingAmount" placeholder="Bidding Amount" className="input input-bordered" required />
+                    <input type="number" name="biddingAmount" placeholder="Bidding Amount" className="input text-sm input-bordered" required />
                 </div>
 
 
@@ -55,27 +55,27 @@ const BidForm = ({ post }) => {
                     <label className="label">
                         <span className="label-text">Deadline</span>
                     </label>
-                    <input type="date" name="deadline" placeholder="deadline" className="input input-bordered" required />
+                    <input type="date" name="deadline" placeholder="deadline" className="input text-sm input-bordered" required />
                 </div>
 
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text">Bidders Email</span>
                     </label>
-                    <input type="email" placeholder="bidders email" defaultValue={user?.email} className="input input-bordered" readOnly />
+                    <input type="email" placeholder="bidders email" defaultValue={user?.email} className="input text-sm  input-bordered" readOnly />
                 </div>
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text">Sellers Email</span>
                     </label>
-                    <input type="email" placeholder="sellers email" defaultValue={postedBy} className="input input-bordered" readOnly />
+                    <input type="email" placeholder="sellers email" defaultValue={postedBy} className="input text-sm input-bordered" readOnly />
                 </div>
 
 
                 <div>
                     {
-                        isValid ? <input disabled className="btn btn-alert text-lg font-semibold text-white bg-gray-500 w-full my-10" type="submit" value={'Bid on the product'} />
-                            : <input className="btn btn-alert text-lg font-semibold text-white bg-gray-500 w-full my-10" type="submit" value={'Bid on the product'} />
+                        isValid ? <input disabled className="btn btn-alert text-base font-semibold text-white bg-gray-500 w-full my-6" type="submit" value={'Bid on the product'} />
+                            : <input className="btn btn-alert text-base font-semibold text-white bg-gray-500 w-full my-6" type="submit" value={'Bid on the product'} />
 
                     }
                 </div>

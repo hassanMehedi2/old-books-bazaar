@@ -37,19 +37,17 @@ const PostCard = ({ post }) => {
                     <div className="card-body  text-left">
                         <h2 className=" text-base md:text-lg font-bold">{bookName}</h2>
                         <p className="text-md"><span className="text-md font-semibold">Category:</span> {category}</p>
-                        <div className="text-gray-500  h-[40px] md:h-[60px] lg:h-[80px] overflow-hidden">
+                        <div className="text-gray-500  h-[40px] md:h-[40px] lg:h-[60px] overflow-hidden">
                             <p ><span className="text-nd font-semibold">Deadline:</span> {deadline}</p>
-                            <p>{description.slice(0, 100)} <span className="text-blue-800 text-justify">read more ..</span></p>
+                            <p>{description.slice(0, 60)} <span className="text-blue-800 text-justify">read more ..</span></p>
                         </div>
 
                         <p className=" mt-1 text-md md:text-md font-bold ">Bids starts from :<span className=" text-base text-red-600 "> {minimumPrice}.00 ৳</span></p>
+                        <div>
+                            <Link to={`/post_details/${_id}`} className="btn   w-full bg-orange-400 text-white font-semibold">Bid Now</Link>
+                        </div>
 
                     </div>
-
-
-
-
-
                 </div>
 
             </div>

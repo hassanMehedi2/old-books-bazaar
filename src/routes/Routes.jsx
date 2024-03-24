@@ -9,46 +9,46 @@ import MyPost from "../components/MyPost/MyPost";
 import MyBids from "../components/MyBids/MyBids";
 
 
-const routes =  createBrowserRouter ([
+const routes = createBrowserRouter([
     {
-        path:'/',
-        element:<MainLayout></MainLayout>,
+        path: '/',
+        element: <MainLayout></MainLayout>,
         children:
-        [
-            {
-                index:true,
-                element: <Home></Home>,
-            },
-            {
-                path:'/login',
-                element:<Login></Login>
-                
-            },
-            {
-                path:'/register',
-                element: <Register></Register>
-            },
-            {
-                path:'/post_details/:id',
-                element: <PostDetails></PostDetails>,
-            loader: ({params})=>fetch(`http://localhost:5000/api/v1/sell_posts/${params.id}`)
-            },
-            {
-                path:'/sell_books',
-                element:<SellBooks></SellBooks>
-            },
-            {
-                path:'/my_posts/:email',
-                element: <MyPost></MyPost>,
-                loader: ({params})=>fetch(`http://localhost:5000/api/v1/sell_posts?email=${params.email}`)
-            },
-            {
-                path:'/my_bids/:email',
-                element: <MyBids></MyBids>,
-                loader: ({params})=>fetch(`http://localhost:5000/api/v1/bids?email=${params.email}`)
-            },
-            
-        ]
+            [
+                {
+                    index: true,
+                    element: <Home></Home>,
+                },
+                {
+                    path: '/login',
+                    element: <Login></Login>
+
+                },
+                {
+                    path: '/register',
+                    element: <Register></Register>
+                },
+                {
+                    path: '/post_details/:id',
+                    element: <PostDetails></PostDetails>,
+                    loader: ({ params }) => fetch(`http://localhost:5000/api/v1/sell_posts?id=${params.id}`)
+                },
+                {
+                    path: '/sell_books',
+                    element: <SellBooks></SellBooks>
+                },
+                {
+                    path: '/my_posts/:email',
+                    element: <MyPost></MyPost>,
+                    loader: ({ params }) => fetch(`http://localhost:5000/api/v1/sell_posts?email=${params.email}`)
+                },
+                {
+                    path: '/my_bids/:email',
+                    element: <MyBids></MyBids>,
+                    loader: ({ params }) => fetch(`http://localhost:5000/api/v1/bids?email=${params.email}`)
+                },
+
+            ]
 
     }
 ])
