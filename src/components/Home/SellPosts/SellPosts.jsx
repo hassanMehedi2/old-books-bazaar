@@ -7,48 +7,80 @@ import axios from "axios";
 
 const SellPosts = () => {
 
-    const [category, setCategory] = useState();
+    const [category, setCategory] = useState('');
     const [posts, setPosts] = useState();
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get(`http://localhost:5000/api/v1/sell_posts?category=${category}`)
-        .then(data=>{
-            setPosts(data.data)
-        })
-        .catch(err=>console.log(err))
-    },[category])
+            .then(data => {
+                setPosts(data.data)
+            })
+            .catch(err => console.log(err))
+    }, [category])
 
     const handleTab = value => {
         setCategory(value);
     }
     return (
         <div className="my-20">
+            <h1 className="text-2xl mb-5 font-bold">Bid Now !</h1>
+            <div className=" px-10">
 
-            {/* react tabs  */}
-            <Tabs>
-                <TabList className={"text-lg font-semibold"}>
-                    <Tab onClick={() => handleTab('fiction')}>Fiction</Tab>
-                    <Tab  onClick={() => handleTab('science-fiction')}>Science Fiction</Tab>
-                </TabList>
+                {/* react tabs  */}
+                <Tabs>
+                    <TabList className={"text-md font-semibold bg-[#e1e8ed]"}>
+                        <Tab onClick={() => handleTab('')}>All</Tab>
+                        <Tab onClick={() => handleTab('fiction')}>Fiction</Tab>
+                        <Tab onClick={() => handleTab('non-fiction')}>Non Fiction</Tab>
+                        <Tab onClick={() => handleTab('science-fiction')}>Science Fiction</Tab>
+                        <Tab onClick={() => handleTab('islamic')}>Islamic</Tab>
+                    </TabList>
+                    <div className="py-10">
 
-                <TabPanel className={"bg-gray-300 w-full "}>
-                    <div className="grid grid-cols-4 gap-3">
-                        {
-                            posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
-                        }
-                        <p>{category}</p>
+                        <TabPanel className={"w-full"}>
+                            <div className="grid grid-cols-4 gap-6  min-h-screen px-4">
+                                {
+                                    posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
+                                }
+
+                            </div>
+                        </TabPanel>
+                        <TabPanel className={"w-full"}>
+                            <div className="grid grid-cols-4 gap-6  min-h-screen px-4">
+                                {
+                                    posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
+                                }
+
+                            </div>
+                        </TabPanel>
+                        <TabPanel className={"w-full"}>
+                            <div className="grid grid-cols-4 gap-6  min-h-screen px-4">
+                                {
+                                    posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
+                                }
+
+                            </div>
+                        </TabPanel>
+                        <TabPanel className={"w-full"}>
+                            <div className="grid grid-cols-4 gap-6  min-h-screen px-4">
+                                {
+                                    posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
+                                }
+
+                            </div>
+                        </TabPanel>
+                        <TabPanel className={"w-full"}>
+                            <div className="grid grid-cols-4 gap-6   px-4">
+                                {
+                                    posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
+                                }
+
+                            </div>
+                        </TabPanel>
                     </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className="grid grid-cols-4 gap-3">
-                        {
-                            posts?.map(post => <PostCard key={post._id} post={post}></PostCard>)
-                        }
-                        <p>{category}</p>
-                    </div>
-                </TabPanel>
 
-            </Tabs>
+                </Tabs>
+            </div>
         </div>
     );
 };
