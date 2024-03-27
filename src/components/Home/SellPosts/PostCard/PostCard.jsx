@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const PostCard = ({ post }) => {
-    const { _id, bookName, deadline, minimumPrice, description, image,category } = post;
+    const { _id, bookName, deadline, minimumPrice, description, image, category } = post;
 
 
 
@@ -30,8 +30,8 @@ const PostCard = ({ post }) => {
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
             >
-                <div className="h-[160px]  md:h-[220px] lg:h-[250px]">
-                    <img src={image} className="object-contain  h-full w-full" alt="brand image" />
+                <div className="h-[150px] w-[130px] mx-auto md:h-[220px] lg:h-[250px] lg:w-[200px]">
+                    <img src={image} className="object-cover   rounded-lg h-full w-full" alt="brand image" />
                 </div>
                 <div className=" card card-compact ">
                     <div className="card-body  text-left">
@@ -42,7 +42,7 @@ const PostCard = ({ post }) => {
                             <p>{description.slice(0, 60)} <span className="text-blue-800 text-justify">read more ..</span></p>
                         </div>
 
-                        <p className=" mt-1 text-md md:text-md font-bold ">Bids starts from :<span className=" text-base text-red-600 "> {minimumPrice}.00 ৳</span></p>
+                        <p className=" mt-1 text-md md:text-md font-bold ">Bid starts from :<span className=" text-base text-red-600 "> {minimumPrice}.00 ৳</span></p>
                         <div>
                             <Link to={`/post_details/${_id}`} className="btn   w-full bg-orange-400 text-white font-semibold">Bid Now</Link>
                         </div>

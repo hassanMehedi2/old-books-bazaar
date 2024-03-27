@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa6";
 const Banner = () => {
     return (
 
-        <div className="h-[80vh] w-full overflow-hidden">
+        <div className="h-[95vh] w-full overflow-hidden">
             <div className="h-full relative  border bordered flex" style={{ backgroundImage: 'url(https://i.ibb.co/L1HP6DD/aaron-burden-cm-Iqk-MPfp-MQ-unsplash-1.jpg)',objectFit:'cover' ,overflow:'hidden'}}>
             <div className="hero-overlay absolute bg-opacity-30"></div>
                <div className="w-1/2">

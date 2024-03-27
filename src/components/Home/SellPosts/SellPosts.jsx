@@ -28,7 +28,7 @@ const SellPosts = () => {
 
                 {/* react tabs  */}
                 <Tabs>
-                    <TabList className={"text-md font-semibold bg-[#e1e8ed]"}>
+                    <TabList className={"text-base font-medium bg-[#e1e8ed]"}>
                         <Tab onClick={() => handleTab('')}>All</Tab>
                         <Tab onClick={() => handleTab('fiction')}>Fiction</Tab>
                         <Tab onClick={() => handleTab('non-fiction')}>Non Fiction</Tab>

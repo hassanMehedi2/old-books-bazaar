@@ -40,6 +40,7 @@ const SellBooks = () => {
         <div className="pt-10 bg-base-200">
             <form onSubmit={handleAddPost} className="  p-5 ">
                 <div >
+                    <div><h1 className="text-center mb-3 font-bold text-2xl">Add a sell post</h1></div>
                     <div className="form-control w-1/3">
                         <label className="label">
                             <span className="label-text">Email Address</span>
