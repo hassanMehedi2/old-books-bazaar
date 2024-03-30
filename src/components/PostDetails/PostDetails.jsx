@@ -3,8 +3,9 @@ import { useLoaderData } from 'react-router-dom';
 import BidForm from './BidForm/BidForm';
 
 const PostDetails = () => {
-    const [post] = useLoaderData({});
-    const { _id, bookName, category, deadline, minimumPrice, description ,image } = post;
+    const post = useLoaderData({});
+   
+    const { _id, bookName, category, deadline, minimumPrice, description ,image } = post.result[0];
     console.log(image);
     return (
         <div className=''>

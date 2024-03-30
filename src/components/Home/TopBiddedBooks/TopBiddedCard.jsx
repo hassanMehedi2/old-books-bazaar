@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Skeleton from "../../Shared/Skeleton/SkeletonCard";
+import SkeletonCard from "../../Shared/Skeleton/SkeletonCard";
 
 const TopBiddedCard = ({ topPostId }) => {
     const [post, setPost] = useState(null);
@@ -8,7 +10,7 @@ const TopBiddedCard = ({ topPostId }) => {
     useEffect(() => {
         axios.get(`http://localhost:5000/api/v1/sell_posts?id=${topPostId}`)
             .then(data => {
-                setPost(data.data[0])
+                setPost(data.data.result[0])
                 console.log(data.data);
             })
             .catch(err => console.log(err))
@@ -21,8 +23,8 @@ const TopBiddedCard = ({ topPostId }) => {
     return (
         <div className="h-full  overflow-hidden">
             {
-                post &&
-                <Link to={`/post_details/${_id}`} className="flex  gap-4 ">
+                !post ? <SkeletonCard></SkeletonCard>
+                : <Link to={`/post_details/${_id}`} className="flex  gap-4 ">
 
                     <div className=" w-[130px]">
                         <img src={image} className="h-[180px] w-[130px] object-cover rounded-xl" alt="product image" />

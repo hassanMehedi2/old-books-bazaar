@@ -17,14 +17,14 @@ const Navbar = () => {
         <NavLink  to={'/bids-requests'} className={({ isActive }) => isActive ? "text-orange-400 btn btn-ghost btn-sm" : "btn btn-ghost btn-sm" }>Bid Requests</NavLink>
     </>
 
-    const handleChange = (e) => {
-        setSearchQuery(e.target.value);
-    }
+    // const handleChange = (e) => {
+    //     setSearchQuery(e.target.value);
+    // }
 
-    const handleSearch = e => {
-        e.preventDefault();
-        console.log(searchQuery);
-    }
+    // const handleSearch = e => {
+    //     e.preventDefault();
+    //     console.log(searchQuery);
+    // }
 
     const handleLogout = () => {
         logout()

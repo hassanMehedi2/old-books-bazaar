@@ -14,7 +14,7 @@ const Banner = () => {
                     <div className="text-center">
                     <h1 className="text-5xl text-white font-bold ">Sell Your Books Now <br />Through Bidding</h1>
                     <p className="text-gray-100 mt-5">Seamless buying and selling experience</p>
-                    <button className="bordered  btn bg-gray-100 rounded-full px-5 mt-5">Explore Now <FaAngleRight></FaAngleRight></button>
+                    <button className="bordered  btn bg-gray-100 rounded-full px-5 mt-8">Explore Now <FaAngleRight></FaAngleRight></button>
                     </div>
                 </div>
             </div>
