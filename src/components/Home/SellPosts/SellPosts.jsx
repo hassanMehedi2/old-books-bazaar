@@ -7,6 +7,7 @@ import useAxios from "../../../hooks/useAxios";
 import RangeSlider from "./RangeSlider";
 import Skeleton from "../../Shared/Skeleton/SkeletonCard";
 import SkeletonCard from "../../Shared/Skeleton/SkeletonCard";
+import FilterByAuthor from "./FilterByAuthor/FilterByAuthor";
 
 
 const SellPosts = () => {
@@ -82,10 +83,9 @@ const SellPosts = () => {
 
 
             <div className="grid grid-cols-4">
-                <div className=" ">
-                    <div className="p-5 text-[#777777]">
-                        <p className="text-base font-semibold mb-7">Filter By Price</p>
-
+                <div className="">
+                    <div className="p-5   text-[#777777]">
+                        <p className=" text-base font-semibold mb-7">Filter By Price</p>
                         <div>
                             <RangeSlider
                                 range={priceRange}
@@ -94,6 +94,9 @@ const SellPosts = () => {
                             <p className="text-sm font-medium mt-3 mb-3 "> ৳ 0 --- ৳ {priceRange}</p>
                             <button onClick={handleMaxAmount} className='btn btn-sm   text-sm  rounded-2xl text-white bg-[#777777]'>Filter</button>
                         </div>
+                    </div>
+                    <div className="mt-14">
+                        <FilterByAuthor></FilterByAuthor>
                     </div>
                 </div>
                 <div className=" px-1 col-span-3">
@@ -108,14 +111,14 @@ const SellPosts = () => {
                             <Tab onClick={() => handleTab('islamic')}>Islamic</Tab>
                         </TabList>
                         {
-                            posts?.data?.result.length === 0 ? <div className="flex items-center justify-center min-h-52 "><p className="text-base">No items found </p></div>
+                            posts?.data?.result.length === 0 ? <div className="flex items-center justify-center min-h-96"><p className="text-base">No items found </p></div>
                                 : <div className="py-10 ">
 
                                     {
                                         [...Array(5).fill(0)].map(() => 
                                         
                                         <TabPanel className={"w-full"} >
-                                            <div className="grid grid-cols-3 gap-8  min-h-52 px-4">
+                                            <div className="grid grid-cols-3 gap-8  min-h-80  px-4">
                                                 {isLoading ? [...Array(6).fill(0)].map(() => <SkeletonCard></SkeletonCard>)
                                                     : posts?.data?.result?.map(post => <PostCard key={post._id} post={post}></PostCard>)
                                                 }
